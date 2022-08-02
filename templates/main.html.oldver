@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Страница входящего звонка</title>
+	</head>
+<body style="background-color:silver;">
+<style>
+
+.textcols {
+        white-space: nowrap;
+}
+.textcols-item {
+        white-space: normal;
+        display: inline-block;
+        width: 30%;
+        vertical-align: top;
+	margin-left: 6%
+}
+.textcols .textcols-item:first-child {
+        margin-right: 1%;
+}
+
+.textcols1 {
+        white-space: nowrap;
+}
+.textcols1-item {
+        white-space: normal;
+        display: inline-block;
+        width: 30%;
+        vertical-align: top;
+        margin-left: 6%
+}
+.textcols1 .textcols1-item:first-child {
+        margin-right: 1%;
+}
+
+</style>
+<form method="post" action="savebitrix?callid={{callid}}&city={{city}}&sip={{resultsipid}}&user={{user}}&hostname={{hostname}}">
+	<h3>Город/отдел: {{city}}<br>
+		Входящий номер: {{resultsipid}}</h3>
+<br>
+    <div class="textcols">
+	<div class="textcols-item" >
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Тормозит 1с">Тормозит 1с</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Не работает функция в 1с">Не работает функция в 1с</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Карты лояльности">Карты лояльности</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Подарочные сертификаты">Подарочные сертификаты </p>
+                <p> <input type="checkbox" name="checkbox" class="get_value" value="Обмен между базами">Обмен между базами</p>
+	        <p> <input type="checkbox" name="checkbox" class="get_value" value="Себестоимость">Себестоимость </p>
+                <p> <input type="checkbox" name="checkbox" class="get_value" value="Открытие периода">Открытие периода </p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Права пользователя">Права пользователя</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Создание нового сотрудника">Создание нового сотрудника </p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Выемка/Внесение">Выемка/Внесение</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="ПКО/РКО и кассовая смена">ПКО/РКО и кассовая смена</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Проведение/удаление документа">Проведение/удаление документа</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Настроить отчет">Настроить отчет</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Чек коррекции">Чек коррекции </p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Не вышел чек">Не вышел чек</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Необученный персонал">Необученный персонал <span>&#129324;</span></p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Отвалился безнальник">Отвалился безнальник</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Отвалился ккм">Отвалился ккм</p>
+	</div>
+	<div class="textcols-item">
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Неисправность ПК">Неисправность ПК</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Проблемы с сетью">Проблемы с сетью</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Настройка ПК">Настройка ПК</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Операции с почтой">Операции с почтой</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Проблема с почтой">Проблема с почтой</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Операции с телефонией">Операции с телефонией</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Проблемы с телефонией">Проблемы с телефонией</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Видеонаблюдение">Видеонаблюдение</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Настройка принтера">Настройка принтера</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Поломка принтера/сканера">Поломка принтера/сканера</p>
+                <p> <input type="checkbox" name="checkbox" class="get_value" value="Замена картриджа">Замена картриджа</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Замена контейнера">Замена контейнера</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Терминалы сбора данных">Терминалы сбора данных</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Эдо, битрикс, ритейлика">Эдо, битрикс, ритейлика</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Замена/ремонт касс">Замена/ремонт касс</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Интернет Магазин">Интернет Магазин</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Забрать посылку">Забрать посылку</p>
+		<p> <input type="checkbox" name="checkbox" class="get_value" value="Бесполезный звонок">Бесполезный звонок</p>
+	</div>
+	<div class="textcols-item">
+                <h3>  История звонка</h3>
+		<ul>
+			{% for item in cur %}
+			<li>
+				<label>
+					<span> <i> Номер телефона:</i> <b> {{item.sip_id}} </b><br><i>Дата:</i><b> {{item.date}} </b><br><i>Пользователь:</i><b> {{item.user}}</b> <br><i>Темы звонка:<br></i><b> <div style="color:#ff0000" >{{item.themes}} <div><br></b> </span><br>
+					</label>
+		        </li>
+			{% endfor %}
+                </ul>
+	</div>
+<div class="textcols1">
+	<div class="textcols1-item">
+		<p><i>Имя компьютера</i><br><textarea style="font-size: 12pt" rows="1" cols="20" name="hostname" maxlength="20"></textarea></p>
+		<p><i>Добавьте комментарий к задаче</i><br><textarea style="font-size: 12pt" rows="3" cols="40" name="comment" maxlength="256"></textarea></p>
+	</div>
+	<div class="textcols1-item">
+		<h4> Выберите ответственного</h4><p>
+		<select name="worker">
+			<option value="999">Я</option>
+			<option value="791">Мягкова Ульяна</option>
+			<option value="759">Лихачева Лена</option>
+			<option value="1640">Шестаков Александр</option>
+			<option value="752">Валеев Руслан</option>
+			<option value="677">Крапивина Юлия</option>
+			<option value="492">Фатеев Андрей</option>
+			<option value="604">Потапов Кирилл</option>
+			<option value="526">Винокуров Александр</option>
+                        <option value="750">Христолюбов Виталий</option>
+                        <option value="768">Силантьев Станислав</option>
+			<option value="633">Зубарев Михаил</option>
+			<option value="643">Барышников Олег</option>
+			<option value="1318">Новоселов Илья</option>
+			<option value="778">Суслык Евгений</option>
+			<option value="764">Рахимов Марсель</option>
+			<option value="676">Очканов Александр</option>
+			<option value="732">Техническая поддержка</option>
+		</select></p><br><p>
+		<form action="/savebitrix" method="POST">
+		<button class="btn btn-success" type="submit"> Сохранить тему и создать заявку в Битрикс </button></p></form>
+</form>
+
+</div>
+</body>
+</html>

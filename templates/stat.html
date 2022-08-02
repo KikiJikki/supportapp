@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+	  <title>Статистика звонков</title>
+  </head>
+  <body style="background-color:silver;">
+  <style>
+  .textcols {
+        white-space: nowrap;
+}
+.textcols-item {
+        white-space: normal;
+        display: inline-block;
+        width: 40%;
+        vertical-align: top;
+        margin-left: 8%
+}
+.textcols .textcols-item:first-child {
+        margin-right: 1%;
+}
+
+.textcols1 {
+        white-space: nowrap;
+}
+
+
+  </style>
+  <div class=textcols" >
+       <div class="textcols-item">
+	       <table 
+		       style = 'font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+                       text-align: center;
+                       border-collapse: collapse;
+                       border-spacing: 5px;
+                       border-radius: 20px;'>
+           {% for themesCount in resThemes %}
+	   <tr><td>{{ themesCount }} </td><td> {{ resThemes[themesCount] }} </td><tr>
+			   {% endfor %}
+
+	       </table>
+       </div>
+       <div class="textcols-item">
+	       <table
+                       style = 'font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+                       text-align: center;
+                       border-collapse: collapse;
+                       border-spacing: 5px;
+                       border-radius: 20px;'>
+
+		       {% for userCount in resUser %}
+		       <tr><td> {{ userCount }} </td><td> {{ resUser[userCount] }} </td><tr>
+				       {% endfor %}
+	       </table><br><br>
+       <i> Общее количество заявок: {{ allCount }} </i>
+       </div>
+	  </body>
+</html>
+
