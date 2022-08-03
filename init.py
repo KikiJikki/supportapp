@@ -9,14 +9,13 @@ from config import bxtoken
 from bitrix24 import *
 from werkzeug.debug import DebuggedApplication
 from themes import themes
-from users import users
 from bs4 import BeautifulSoup as b
 
 
 
 app = Flask(__name__)
 app.config["CACHE_TYPE"] = "null"
-application = DebuggedApplication(app, evalex=True)
+application = DebuggedApplication(app, evalex=False)
 
 client = MongoClient('localhost', 27017)
 db = client.opros
@@ -32,7 +31,7 @@ def quote():
     r = requests.get('http://ibash.org.ru/random.php')
     html = b(r.text,'html.parser')
     citt = html.find('div', class_='quote')
-    quote = str(citt.text)
+    quote = citt.text
     return quote
 
 
@@ -86,6 +85,12 @@ def stat():
     print('user visit to STATISTICS site')
     resUser = {}
     allCount = 0
+    users = []
+   
+    query = {'user': {'$exists': 'true'}}
+    
+    for value in collusers.find(query, {'_id': 0,'userfordb': 1}):
+        users.append(value['userfordb'])
 
     for userCount in users:
         query = {"user": userCount}
