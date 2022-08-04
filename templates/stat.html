@@ -32,6 +32,7 @@
                        text-align: center;
                        border-collapse: collapse;
                        border-spacing: 5px;
+		       width: 40%;
                        border-radius: 20px;'>
            {% for themesCount in resThemes %}
 	   <tr><td>{{ themesCount }} </td><td> {{ resThemes[themesCount] }} </td><tr>
@@ -40,15 +41,17 @@
 	       </table>
        </div>
        <div class="textcols-item">
+	       <p> Логин / Обшее число / За сегодня </p>
 	       <table
                        style = 'font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
                        text-align: center;
                        border-collapse: collapse;
-                       border-spacing: 5px;
+                       border-spacing: 20px;
+		       width: 40%;
                        border-radius: 20px;'>
 
 		       {% for userCount in resUser %}
-		       <tr><td> {{ userCount }} </td><td> {{ resUser[userCount] }} </td><tr>
+		       <tr><td> {{ userCount }} </td><td> {{ resUser[userCount] }} </td><td> {{ resUserDay[userCount] }}</td><tr>
 				       {% endfor %}
 	       </table><br><br>
        <i> Общее количество заявок: {{ allCount }} </i>

@@ -11,7 +11,6 @@ from werkzeug.debug import DebuggedApplication
 from themes import themes
 from bs4 import BeautifulSoup as b
 
-#----
 
 app = Flask(__name__)
 app.config["CACHE_TYPE"] = "null"
@@ -26,6 +25,7 @@ colltechpc = db.techpc
 collusers = db.users
 bx24=Bitrix24(bxtoken)
 x = []
+now = datetime.datetime.now()
 
 def quote():
     r = requests.get('http://ibash.org.ru/random.php')
@@ -46,7 +46,6 @@ def iptel():
 
 #--- вылавливаем данные с урла
     
-    now = datetime.datetime.now()
     incall = str(request.args.get('incall'))
     techuser = str(request.args.get('techuser'))
     res_str = incall.replace('sip:', '')
@@ -84,9 +83,11 @@ def iptel():
 def stat():
     print('user visit to STATISTICS site')
     resUser = {}
+    resUserDay = {}
     allCount = 0
     users = []
-   
+    date = now.strftime("%d-%m-%y")
+
     query = {'user': {'$exists': 'true'}}
     
     for value in collusers.find(query, {'_id': 0,'userfordb': 1}):
@@ -96,6 +97,8 @@ def stat():
         query = {"user": userCount}
         resUser[userCount] = collopros.count_documents(query)
         allCount = allCount + collopros.count_documents(query)
+        query = {"user": userCount, "date": {'$regex': date}}
+        resUserDay[userCount] = collopros.count_documents(query)
    
     resThemes = {}
     for themesCount in themes:
@@ -106,7 +109,8 @@ def stat():
             resUser = resUser, 
             resThemes = resThemes, 
             themesCount = themesCount, 
-            allCount = allCount)
+            allCount = allCount,
+            resUserDay=resUserDay)
             
 
 @app.route('/call', methods=['GET','POST'])
