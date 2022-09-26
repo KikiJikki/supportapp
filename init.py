@@ -184,7 +184,7 @@ def savebitrix():
         description = "Город/Отдел:  " + city + " \n Телефон:  " + resultsipid + " \n Имя компьютера: " + hostname + "\n " + comment
         description = str(description)
 
-#----  по дефолту херачим группу проекта ТП оптовых компаний - общая группа
+#----  по дефолту  группу проекта ТП оптовых компаний - общая группа
 
         project = "42"
         
